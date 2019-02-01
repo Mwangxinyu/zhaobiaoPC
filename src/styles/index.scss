@@ -1,0 +1,1006 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Arial, sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+//vue router transition css
+.router-fade-enter-active,
+.router-fade-leave-active {
+  transition: opacity .2s ease
+}
+
+.router-fade-enter,
+.router-fade-leave-active {
+  opacity: 0;
+}
+
+//main-container全局样式
+//提示文字
+.el-form-item__error {
+  color: #f56c6c;
+  font-size: 9px;
+  line-height: 1;
+  padding-top: 0px;
+  position: absolute; //top: 100%;
+  top:36px;
+  left: 0;
+}
+
+//合同详情tab切换下横线
+.el-tabs__nav-wrap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0px;
+  background-color: #e4e7ed;
+  z-index: 1;
+}
+
+.app-container {
+  padding: 20px;
+}
+
+.app-main {
+  flex: 1;
+  overflow: auto;
+  background-color: #edf2f7;
+  padding: 10px;
+}
+
+// 特殊事项treetable模板样式
+.content_wrapper {
+  color: #333;
+  font-size: 14px;
+  .header {
+    position: fixed;
+    height: 61px;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background: white;
+    z-index: 4;
+    border-bottom: 1px solid #e3e3e3;
+    .btns {
+      float: right;
+      padding: 15px 20px 15px 0;
+    }
+  };
+  .body {
+    margin: 72px 10px 10px 10px;
+    background-color: #feffff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    .toolbar {
+      padding-left: 14px;
+      .level_label {
+        float: left;
+        line-height: 50px;
+        font-size: 12px;
+        color: #666;
+      }
+      .level_no {
+        margin-top: 8px;
+      }
+      .btns button {
+        float: right;
+        height: 32px;
+        margin: 10px;
+      }
+    }
+
+  }
+}
+
+// 待删除
+.content_top_btns{
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  right: 0;
+  background: white;
+  z-index: 2;
+  top: 0;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.text_center {
+  text-align: center !important;
+}
+
+.input_text_right {
+  text-align: right;
+}
+
+.input_text_right input {
+  text-align: right;
+  padding-right: 30px;
+}
+
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+// 查询列表表格
+.table-header-bg {
+  background: $tableHeader-bg !important;
+  border-color: $tableHeader-border;
+  font-size: 13px;
+  color: $tableHeader-color !important;
+  height: 35px;
+  font-weight: 500;
+}
+.table-header-bg-H {
+  height: 25px;
+}
+.table-header-bg-V {
+  background: $tableHeader-bg !important;
+  border-color: $tableHeader-border;
+  font-size: 13px;
+  color: $tableHeader-color !important;
+  height: 41px;
+  font-weight: 500;
+}
+
+.el-table td,
+.el-table th {
+  padding: 0;
+}
+
+.editable-bg {
+  background: $editable-bg;
+}
+
+.td_bg_warning {
+  background: #F56C6C;
+}
+
+.td_bg_warning input {
+  color: #ffffff;
+}
+
+// 表格下可编辑区域的input或者select样式
+.table-input-swap .el-input__inner {
+  background: transparent;
+  border: none;
+  font-size: 12px
+}
+
+.tableContent-bg {
+  background: $tableContent-bg;
+  border-color: $tableContent-border;
+  font-size: 12px;
+  color: $tableContent-color;
+  height: 35px;
+}
+.tableContent-bg-V {
+  background: $tableContent-bg;
+  border-color: $tableContent-border;
+  font-size: 12px;
+  color: $tableContent-color;
+  height: 40px;
+}
+.table_margin_10{
+  width: 98.6%;
+  margin: 10px;
+}
+.div_block{
+  display:block;
+}
+
+.fontSize16{
+  font-size: 16px;
+}
+// 排序箭头颜色
+.el-table .ascending .sort-caret.ascending {
+  border-bottom-color: $sort-arrows;
+}
+
+.el-table .descending .sort-caret.descending {
+  border-top-color: $sort-arrows;
+}
+/*tree-table背景样式*/
+.bgStyle{
+  background-color: #fff;
+  border-radius:4px;
+  padding:15px 15px 70px 15px;
+  margin:6px;
+}
+.bgStyles{
+  background-color: #fff;
+  padding:15px;
+}
+
+// 列表的公共样式
+.el-form-item {
+  margin-bottom: 0;
+}
+
+.padding_left_20 {
+  padding-left: 20px;
+}
+
+.padding_20 {
+  padding: 20px;
+}
+
+.table_width_left {
+  width: 98%;
+  margin-left: 1%
+}
+.table_font{
+  margin-left: 1%;
+  color:#41549c;
+  font-size: 14px
+}
+
+
+// 查询区域样式
+.searchSection {
+  height: 56px;
+  font-size: 13px;
+  border-bottom: 1px solid #D5D5D5;
+  border-radius: 4px 4px 0 0;
+  background-color: #feffff;
+}
+
+.searchSection .el-collapse-item__content {
+  padding-bottom: 0;
+  font-size: 12px;
+  color: #333;
+}
+
+.searchSection .el-col-6,
+.el-col-5 {
+  min-height: 40px;
+}
+
+.searchSection .el-collapse-item__arrow {
+  position: absolute;
+  right: 65px;
+}
+
+.searchSection .el-form-item {
+  min-height: 40px;
+  padding: 5px 0;
+}
+
+.pd_10 {
+  padding: 10px;
+}
+
+// 搜索按钮样式
+.searchBtn {
+  float: right;
+  margin-right: 15px;
+  margin-top: 10px;
+  height: 32px;
+}
+
+/**
+  提示信息样式
+ */
+
+.reminder {
+  margin-left: 25px;
+  font-size: 12px;
+}
+.reminders {
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+
+.reminderNum {
+  color: #333;
+  font-size: 12px;
+}
+
+.reminderBorder {
+  background-color: $plainBg;
+  border: 1px solid $borderBleach;
+  color: $colorGray;
+  position: fixed;
+  bottom: 2px;
+  width: 100%;
+  z-index: 6;
+  margin-left: -15px;
+}
+.btnRight {
+  float: right;
+  margin-right: 1%;
+}
+
+.el-table .interleave_row {
+  background: #F5F7FA;
+}
+
+.el-table .success-row {
+  background: #FAECD7;
+}
+
+// 字体大小
+.fontSize18 {
+  font-size: 18px
+}
+
+// tab切换样式
+.el-tabs__nav-wrap {
+  padding: 0 26px;
+}
+
+.el-tabs__item {
+  height: 50px;
+  line-height: 50px;
+  color: $tabItem;
+  font-size: 14px;
+}
+
+.el-tabs__item.is-active {
+  color: $tabHover
+}
+
+.el-tabs__active-bar {
+  //background-color: #717ea1;
+  background-color: #41549c;
+}
+
+.el-tabs__header {
+  margin: 0;
+}
+
+.el-tabs__nav-wrap::after {
+  height: 0
+}
+
+// 分隔线
+.betweenSpace {
+  height: 6px;
+  background-color: $halvingLine;
+}
+
+// 分页
+.el-pagination.is-background .el-pager li.active {
+  background-color: #7986aa;
+}
+.el-pagination.is-background .el-pager li:not(.disabled).active{
+  background-color: #7986aa;
+}
+
+.el-pagination--small .btn-prev,
+.el-pagination--small .el-pager,
+.el-pagination--small .btn-next {
+  margin-top: 3px !important;
+}
+
+// 列表的操作按钮
+.treeTable_Control {
+  padding: 1px 0;
+  background-color: #feffff;
+}
+
+// 操作按钮区域
+.topBtn,
+.top-handleSection {
+  float: right;
+  padding: 15px 20px 15px 38px;
+}
+//顶层按钮形式
+.operatingRow{
+  margin-bottom: 10px;
+  background: white;
+}
+
+// 保存按钮样式
+.saveBtn {
+  width: 65px;
+}
+
+// 发起审批和审批过程按钮样式
+.approvalBtn {
+  width: 85px;
+  height:32px;
+}
+
+// 特殊事项清单
+/**
+  treeTable预设样式
+ */
+.mar_left_10{
+  margin-left: 10px;
+}
+.bg_lightBlue {
+  background: #f3faff;
+}
+
+// 第一层样式
+.bg_orange {
+  background: $orange;
+}
+
+/**
+  层级选项
+ */
+
+.hierarchy {
+  float: left;
+  margin-left: 10px;
+  font-size: 12px;
+  color: #666;
+  margin-top: 2%;
+}
+
+.paging {
+  float: left;
+  margin-top: 1%;
+}
+
+
+/**
+  增加
+ */
+
+.addBtn {
+  margin: 10px;
+}
+
+/**
+    上面流程按钮右浮动
+ */
+
+.rightFloat {
+  float: right;
+  height: 32px;
+}
+
+/**
+  项目地块图和版本摘要
+ */
+
+.blackBorder {
+  border: 1px solid #f9e4e4;
+}
+
+/*审批时间*/
+
+.caret-wrapper {
+  position: absolute !important;
+  top: -5px;
+  right: 1px;
+}
+
+.margin_bottom_20 {
+  margin-bottom: 20px;
+}
+
+.margin_bottom_40 {
+  margin-bottom: 40px;
+}
+
+// 自定义collapse折叠面板
+.long-collapse {
+  margin-bottom: 8px;
+}
+
+.long-collapse .long-collapse-item-header {
+  width: 100%;
+  height: 45px;
+  border-bottom: 1px solid #eee;
+  padding-left: 15px;
+  background-color: $collapse-header-bg;
+  border-radius: 4px 4px 0 0;
+  line-height: 45px;
+  font-size: 14px;
+  color: $collapse-header-color;
+}
+
+.long-collapse .long-collapse-content-swap {
+  padding: 7px;
+  background-color: $collapse-content-bg;
+  border-radius: 0 0 4px 4px;
+}
+
+.long-collapse-header-icon {
+  height: 12px;
+  display: inline-block;
+  border-left: 2px solid #41549c;
+  padding-right: 10px;
+}
+
+// 折叠面板header下的按钮组
+.long-collapse .long-collapse-item-header .long-collapse-button-group {
+  float: right;
+  overflow: hidden;
+}
+
+.long-collapse .long-collapse-item-header .long-collapse-button-group .long-collapse-button-item {
+  float: left;
+  padding-right: 15px;
+}
+
+.long-collapse .long-collapse-item-header .long-collapse-button-group .long-collapse-button-item:last-child {
+  cursor: pointer;
+}
+
+/* 合同详情页公共样式提取*/
+
+.dev1_border {
+  background-color: #EEF2F6;
+  border: 4px solid #EEF2F6;
+}
+
+.dev_show_table {
+  padding: 15px;
+  background-color: #FFF;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.contract-caption-bgc {
+  background-color: #EEF2F6
+}
+
+.contract-caption-icon {
+  text-align: right;
+  padding-right: 15px;
+}
+
+.contract-caption-basic {
+  line-height: 44px;
+  border-bottom: 1px solid #eee;
+  background-color: #FFFFFF;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px
+}
+
+.contract-w100 {
+  width: 100%;
+}
+
+.position_top {
+  position: relative;
+}
+
+.position_buttom {
+  position: absolute;
+  top: 18px;
+  width: 220px;
+  font-size: 12px;
+  color: #999;
+  right: 6px;
+}
+
+.contract-blue {
+  color: #409EFF;
+}
+
+.contract-ml10 {
+  position: relative;
+  padding-left: 15px;
+}
+
+.contract-mt1 {
+  margin-top: 1%
+}
+
+.mar_top_20 {
+  margin-top: 20px;
+}
+
+.size_color_12 {
+  font-size: 12px;
+  color: #666666;
+}
+
+.dev1_span {
+  margin-top: -16%;
+  margin-right: 5%;
+  font-size: 12px;
+  color: #999;
+}
+
+.contract-red {
+  color: red;
+}
+
+.dev1-line {
+  height: 14px;
+  position: absolute;
+  top: 16px;
+  display: inline-block;
+  border-left: 2px solid #41549c;
+}
+
+.dev1_font {
+  margin-left: 10px;
+  color: #41549c;
+  font-size: 14px;
+}
+
+.width_20 {
+  width: 20%
+}
+
+.width_25 {
+  width: 25%
+}
+
+.width_33 {
+  width: 33.3%
+}
+
+.width_50 {
+  width: 50%
+}
+
+.width_100_radius {
+  width: 100%;
+  border-radius: 8px !important;
+}
+
+// tab 标签页
+.el-tabs__header {
+  background-color: #ffffff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  height: 50px;
+}
+
+// tab 标签页的内容部分（需要单独的父级）
+.long-tabs-content {
+  overflow: hidden;
+  background-color: #feffff;
+}
+
+/**
+  分页位置样式
+ */
+
+.paginate {
+  float: right;
+  margin: 10px 0 40px 0;
+}
+.paginate_center{
+  margin: 10px 33%;
+}
+/**
+  上传组件样式
+ */
+
+.avatar-uploader .el-upload {
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.avatar-uploader .el-upload:hover {
+  border-color: #409EFF;
+}
+
+.avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 178px;
+  height: 178px;
+  line-height: 178px;
+  text-align: center;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+}
+
+/**
+  校验文字位置调整
+*/
+
+.investmentClass>>>.el-form-item__error {
+  top: 95%;
+}
+
+.investmentClass {
+  margin-top: 6px;
+}
+
+/**
+ 选项卡标题的背景色，和高度
+*/
+.color_colorGray{
+  color: $colorGray
+}
+.width_400{
+  width: 400px;
+}
+.margin_5{
+  margin: 5px;
+}
+.height_220{
+  height:220px;
+}
+.section_class {
+  margin: 6px;
+}
+.fontSize14{
+  font-size: 14px;
+}
+.section_class_top {
+  margin: 66px 6px 6px 6px;
+}
+
+.section_bottom {
+  padding-bottom: 3px;
+}
+.section_bottom-c {
+  padding-bottom: 15px;
+}
+
+.section_class>>>.el-tabs__item.is-active {
+  color: #41549c;
+}
+
+.section_class>>>.el-tabs__active-bar {
+  background-color: #41549c;
+}
+
+.section_class>>>.el-tabs__item.is-active:hover {
+  color: #41549c;
+}
+
+.section_class>>>.el-tabs__nav {
+  margin-left: 10px;
+}
+
+.section_class>>>.el-tabs__header {
+  margin: 0;
+}
+
+/**
+  日历控件临时样式，后续会调整
+ */
+
+.__vev_calendar-wrapper .cal-wrapper {
+  padding: 0;
+  background: white;
+}
+
+// dialog header线条
+.el-dialog__header {
+  border-bottom: 1px #F5F5F5 solid;
+}
+
+// 目标成本tab切换导航功能按钮样式
+.function-Btn {
+  padding: 5px;
+  position: absolute;
+  z-index: 12;
+  top: 8px;
+  right: 20px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"]{
+  -moz-appearance: textfield;
+}
+// loading 样式
+.long-loading{
+  //z-index: 2032 !important;
+  background: rgba(0, 0, 0, 0.5);
+}
+// 小红点设置位置
+.el-badge__content.is-fixed.is-dot{
+  right: 0;
+}
+.el-badge__content.is-fixed{
+  top: 5px;
+}
+.blueBtn{
+  width: 55px;
+  border: 1px solid #41549c;
+  color: #41549c;
+  text-align: center;
+  height: 30px;
+}
+//我得新闻业img样式
+.body_main img{
+  margin: 0 11%;
+  height: 400px;
+  width: 700px;
+}
+//公告栏标签
+
+.public_new_back{
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+  color: white;
+  border-radius: 2px;
+}
+.green_back{
+  background: #3c763d;
+}
+.blue_back{
+  background: #41549c;
+}
+.yellow_back{
+  background: #DDAB23;
+}
+.red_back{
+  background: #EB7C62;
+}
+//审批协商对话框样式
+.chatBorder{
+  border: 1px solid #eee;
+  height: 400px;
+  overflow-y: auto
+}
+.chatBlock{
+  display: inline-block;
+  line-height: 1.7em;
+  margin: 0;
+  min-width: 10%;
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: lightgrey;
+  border: 1px solid #eee;
+}
+.font_color_red input {
+  color: red!important;
+}
+.font_color_green input {
+  color: green!important;
+}
+.font_left input {
+   text-align: left;
+ }
+.column-del-btn{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: -4px;
+  right: -10px;
+  padding: 5px;
+  border: none;
+  background: red;
+  border-radius: 50%;
+  line-height: 3px;
+  font-size: 18px;
+  color: white;
+}
+.column-del-btn:hover{
+  background: red;
+  color: white;
+}
+// 成本审批--测算人展示
+.principal {
+  padding-left: 900px;
+  color: #000;
+}
+// 审批流tab标签新增选项区域样式
+.tab-operate-group{
+  position: absolute;
+  top: 63px;
+  right: 32px;
+  height: 55px;
+  z-index: 1;
+  line-height: 55px;
+  color: #606266;
+  font-size: 14px;
+}
+.approval-header{
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  width: 100%;
+  background-color:#fff;
+  margin-bottom:5px;
+  padding:0 5px;
+  height: 60px;
+  border-bottom: 1px solid #e3e3e3;
+  line-height: 60px;
+  color: #41549c;
+  font-size: 14px;
+}
+.approval-header .btns{
+  text-align: right;
+  float: right;
+}
+.approval-header .approval-header-title{
+  padding-left: 20px;
+}
+.setBorder {
+  padding:20px;
+  border: 1px solid #e3e3e3;;
+  color: #606266;
+  font-size: 14px;
+}
+
+//输入框只读文字颜色调整
+ .el-input.is-disabled .el-input__inner{
+   color: #808080;
+}
+.el-textarea.is-disabled .el-textarea__inner{
+  color: #808080;
+}
+.el-cascader.is-disabled .el-cascader__label{
+  color: #808080;
+}
+
+//swich样式调整
+.el-switch.is-checked .el-switch__core::after{
+  margin-left: -14px;
+}
+
+.el-switch__core:after{
+  position: absolute;
+  top: -1px;
+  left: 0;
+  border-radius: 100%;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  width: 14px;
+  height: 14px;
+  background-color: #fff
+}
+
+//悬浮提示
+.el-tooltip__popper{
+  max-width: 350px
+}
+body{
+  word-wrap : break-word
+}
